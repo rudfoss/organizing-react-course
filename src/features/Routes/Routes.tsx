@@ -3,13 +3,21 @@ import { Switch, Route, useHistory } from "react-router-dom"
 import Login from "features/Login"
 import Home from "features/Home"
 import NotFound from "features/NotFound"
+import LogoutRoute from "./LogoutRoute"
+import Counter from "features/Counter"
 
 export const Routes = (): JSX.Element => {
 	const { push, goBack } = useHistory()
 	return (
 		<Switch>
 			<Route path="/login">
-				<Login onSuccess={() => push("/auth")} onCancel={() => push("/")}/>
+				<Login onSuccess={() => push("/")} onCancel={() => push("/")}/>
+			</Route>
+			<Route path="/logout">
+				<LogoutRoute/>
+			</Route>
+			<Route path="/counter">
+				<Counter/>
 			</Route>
 			<Route path="/" exact>
 				<Home/>
