@@ -5,6 +5,7 @@ import Home from "features/Home"
 import NotFound from "features/NotFound"
 import LogoutRoute from "./LogoutRoute"
 import Counter from "features/Counter"
+import PostList from "features/PostList"
 
 export const Routes = (): JSX.Element => {
 	const { push, goBack } = useHistory()
@@ -18,6 +19,9 @@ export const Routes = (): JSX.Element => {
 			</Route>
 			<Route path="/counter">
 				<Counter/>
+			</Route>
+			<Route path="/posts">
+				<PostList/>
 			</Route>
 			<Route path="/" exact>
 				<Home/>
